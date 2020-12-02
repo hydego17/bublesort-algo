@@ -1,22 +1,25 @@
-class Sorter {
-  constructor(public collection: number[]) {}
+import { Sorter } from "./Sorter";
 
-  sort(): void {
-    const { length } = this.collection;
+import { NumbersCollection } from "./NumbersCollection";
+import { CharCollection } from "./CharCollection";
 
-    for (let i = 0; i < length; i++) {
-      for (let j = 0; j < length - i - 1; j++) {
-        if (this.collection[i] > this.collection[j + 1]) {
-          const leftHand = this.collection[j];
-          this.collection[j] = this.collection[j + 1];
-          this.collection[j + 1] = leftHand;
-        }
-      }
-    }
-  }
-}
+// Declare some variables to sort
 
-const sorter = new Sorter([10, 3, -5, 0]);
+const numbersCol = new NumbersCollection([10, -5, 2, -3, 1, 7]);
+const someString = new CharCollection("Hydego");
 
-sorter.sort();
-console.log(sorter.collection);
+// Number Sorting
+console.log("Before: ", numbersCol.data);
+const sortNum = new Sorter(numbersCol);
+sortNum.sort();
+console.log("After: ", numbersCol.data);
+
+console.log("============================");
+
+// String Sorting
+console.log("Before: ", someString.data);
+const sortString = new Sorter(someString);
+sortString.sort();
+console.log("After: ", someString.data);
+
+console.log("============================");
