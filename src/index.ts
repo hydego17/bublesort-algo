@@ -14,6 +14,7 @@ console.log("\n");
 console.log("Number Sorting ");
 console.log("---------------");
 console.log("Before: ", numbersColl.data);
+
 const sortNum = new Sorter(numbersColl);
 sortNum.sort();
 console.log("After: ", numbersColl.data);
@@ -25,6 +26,7 @@ console.log("\n");
 console.log("String Sorting ");
 console.log("---------------");
 console.log("Before: ", someString.data);
+
 const sortString = new Sorter(someString);
 sortString.sort();
 console.log("After: ", someString.data);
